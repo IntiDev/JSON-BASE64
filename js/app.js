@@ -1,1 +1,1 @@
-console.log("JSON BASE64");
+console.log("JSON BASE64")
