@@ -10,7 +10,7 @@
       const imageLoad = new FileReader();
       imageLoad.addEventListener("load", function(e) {
         document.getElementById("img-content").src= e.target.result;
-        // document.getElementById("b64").innerHTML = e.target.result;
+        document.getElementById("b64").innerHTML = e.target.result;
         arrayBase64.push(e.target.result);
         // console.log(JSON.stringify(e.target.result));
         // arrayBase64["yyy"] = e.target.result.split(",");
@@ -41,7 +41,8 @@
     linkDownload.setAttribute("download", fileName[0] + ".json");
     // linkDownload.addEventListener("click", downloadJSON);
     linkDownload.addEventListener("click", function(code) {
-      this.href = 'data:text/javascript;charset=utf-8,'
+      console.log("HOLAAAA", code);
+      this.href = 'data:image/jpeg;charset=utf-8,'
       + encodeURIComponent(objectFile);
     });
   }
