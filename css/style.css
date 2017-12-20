@@ -2,6 +2,46 @@ body {
   background-color: lightgrey;
 }
 
-h1 {
+h1,h3 {
+  /* margin-top: 20px; */
   text-align: center;
+}
+
+section {
+  background-color: white;
+  border: 4px solid black;
+  height: 450px;
+  padding: 0 50px;
+  margin: 100px 30%;
+  width: 40%;
+}
+
+input {
+  border-radius: 5px;
+  background-color: #7F9CCB;
+  display: block;
+  padding: 10px 5px;
+  width: 100%;
+}
+
+#img-content {
+  display: block;
+  height: 200px;
+  margin-top: 50px;
+  width: 100%;
+}
+
+button {
+  display: none;
+  height: 40px;
+  margin-left: 30%;
+  margin-top: 20px;
+  padding: 5px;
+  width: 40%;
+}
+
+button > img {
+  height: 25px;
+  padding-right: 15px;
+  width: 20%;
 }
