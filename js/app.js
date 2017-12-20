@@ -27,7 +27,22 @@
       "content": stringBase64[1]
     }
     console.log(objectFile);
+    // CODIGO PARA DESCARGAR ARCHIVO
+    const imgName = objectFile.name;
+    const fileName = imgName.split(".");
+    // console.log(fileName
+    const linkDownload = document.getElementById("link");
+    linkDownload.setAttribute("download", fileName[0] + ".json");
+    // linkDownload.addEventListener("click", downloadJSON);
+    linkDownload.addEventListener("click", function(code) {
+      this.href = 'data:text/javascript;charset=utf-8,'
+      + encodeURIComponent(objectFile);
+    });
   }
 
+  // const downloadJSON = function(code) {
+  //   this.href = 'data:text/plain;charset=utf-8,'
+  //   + encodeURIComponent(objectFile);
+  // };
   document.getElementById("input-file").addEventListener("change", readFile);
 })()
