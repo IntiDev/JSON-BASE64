@@ -35,7 +35,8 @@
     linkDownload.setAttribute("download", fileName[0] + ".json");
     // linkDownload.addEventListener("click", downloadJSON);
     linkDownload.addEventListener("click", function(code) {
-      this.href = 'data:text/javascript;charset=utf-8,'
+      console.log("HOLAAAA", code);
+      this.href = 'data:image/jpeg;charset=utf-8,'
       + encodeURIComponent(objectFile);
     });
   }
