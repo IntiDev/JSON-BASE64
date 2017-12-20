@@ -8,29 +8,23 @@
     if (this.files && this.files[0]) {
       var arrayBase64 = [];//porque asi se accede a la data
       const imageLoad = new FileReader();
-      imageLoad.addEventListener("load", function(e) {
+      imageLoad.addEventListener("load", (e) => {
+        var data = this.files;
         document.getElementById("img-content").src= e.target.result;
-        document.getElementById("b64").innerHTML = e.target.result;
-        arrayBase64.push(e.target.result);
-        // console.log(JSON.stringify(e.target.result));
-        // arrayBase64["yyy"] = e.target.result.split(",");
+        var base64 = e.target.result;
+        generateJSON(base64, data);
       });
       imageLoad.readAsDataURL( this.files[0] );
-      var data = this.files;
-      generateJSON(arrayBase64, data);
     }
   }
 
-  const generateJSON = function(arrayImage, dataFile) {
-    console.log( arrayImage.length);
-    // console.log(arrayImage.yyy);
-    console.log(dataFile);
-    const xxx = arrayImage;
-    console.log(xxx);
+  let generateJSON = function(arrayImage, dataFile) {
+
+    const stringBase64 = arrayImage.split(',');
     const objectFile = {
       "name":dataFile[0].name,
-      "type":dataFile[0].type
-      // "content": xxx[1]
+      "type":dataFile[0].type,
+      "content": stringBase64[1]
     }
     console.log(objectFile);
     // CODIGO PARA DESCARGAR ARCHIVO
