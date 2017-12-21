@@ -9,6 +9,7 @@
       imageLoad.addEventListener("load", (e) => {
         const data = this.files;
         document.getElementById("img-content").src= e.target.result;
+        console.log(e.target.result);
         const base64 = e.target.result;
         generateJSON(base64, data);
       });
@@ -32,7 +33,7 @@
       this.href = 'data:text/javascript;charset=utf-8,' + encodeURIComponent(JSON.stringify(objectFile));
     });
   }
-  
+
   document.getElementById("input-file").addEventListener("change", readFile);
-  
+
 })()
